@@ -19,4 +19,4 @@ class RoomManager:
 
     async def handle_message(self, room_id: str, websocket: WebSocket, raw_data: dict):
         if room_id in self.rooms:
-            await self.rooms[room_id].process_message(raw_data)
+            await self.rooms[room_id].process_message(websocket, raw_data)
